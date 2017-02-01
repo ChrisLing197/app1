@@ -1,0 +1,9 @@
+<h3>Items</h3>
+<a href="{% url 'system:post_item' %}">New Item</a>
+<ul class="list-group">
+{% for item in tems %}
+    <li class="list-group-item">name= {{ item.name }}, price= {{ item.price }}, condition= {{item.condition}}, quantity={{item.quantity}}, description= {{item.description}}</li>
+{% empty %}
+    <li class="list-group-item">You have no items</li>
+{% endfor %}
+</ul>

@@ -1,0 +1,8 @@
+<h3>Cart</h3>
+<ul class="list-group">
+{% for ca in cart %}
+    <li class="list-group-item">name={{ca.name}}, quantity={{ ca.quantity }}, condition= {{ ca.condition }}, price={{ca.price}}</li>
+{% empty %}
+    <li class="list-group-item">You have no items in cart</li>
+{% endfor %}
+</ul>

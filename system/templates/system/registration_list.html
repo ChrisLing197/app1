@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% block content %}
+{% for registration in object_list %}
+    <div class="registration">
+        [{{ registration.id }}] {{ registration }} - {{ registration.role }}
+    </div>
+{% empty %}
+    No users.
+{% endfor %}
+{% endblock %}

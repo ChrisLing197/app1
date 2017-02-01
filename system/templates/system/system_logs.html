@@ -1,0 +1,8 @@
+<h3 style="text-align: center;">System Activity</h3>
+<ul class="list-group">
+{% for log in sys %}
+    <li class="list-group-item">[{{ log.timestamp }}] | Type: {{ log.activity_type }} | User: {{ log.user_responsible }} | {{ log.description }}
+{% empty %}
+    <li class="list-group-item">There has been no activity in the system logs.</li>
+{% endfor %}
+</ul>

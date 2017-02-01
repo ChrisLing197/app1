@@ -1,0 +1,9 @@
+<h3 style="text-align: center;">Account Information</h3>
+<p>Name: {{ user.user.first_name }} {{ user.user.last_name }}</p>
+<p>Username: {{ user.user.username }}</p>
+<p>E-Mail: {{ user.user.email }}</p>
+<p>Phone: {{ user.phone_number }}</p>
+<p>Date of Birth: {{ user.date_of_birth }}</p>
+<p>Address: {{ user.mail_address }}</p>
+<p>Joined Test App on {{ user.date_registered }}</p>
+<a class="btn btn-primary" href="{% url 'system:user_edit' %}">Edit Profile Info</a>

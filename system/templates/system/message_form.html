@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <h3>Send Message</h3>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input class="btn btn-primary" type="submit" value="Send" />
+    </form>
+    <form action="/dashboard/" method="get">
+        <input class="btn btn-primary" type="submit" value="Cancel"/>
+    </form>
+{% endblock %}

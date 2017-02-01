@@ -1,0 +1,19 @@
+<h3>Items</h3>
+<ul class="list-group">
+{% for item in tems %}
+    <li class="list-group-item">name= {{ item.name }}, description= {{item.description }}, condition= {{item.condition}}, quantity= {{ item.quantity }}, price= {{ item.price }}  
+    <label for="quan">Quantity: </label>
+    <input type="number" step="any" name="quan" value="0" max="{{item.quantity}}" min="0" />
+
+ 
+    <form method="post" action="{% url 'system:add' item.id %}">
+        {% csrf_token %}
+        <input type="submit" name="submit" value="Add to Cart" />
+    </form>
+
+</li>
+
+{% empty %}
+    <li class="list-group-item">You have no items</li>
+{% endfor %}
+</ul>

@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h3>This is to test out django</h3>
+<div style="float:left; padding:5px">
+    <form action="/accounts/login" method="get">
+        <input class="btn btn-primary" style="width:100px; padding:5px;" type="submit" value="Login"/>
+    </form>
+</div>
+<div style="float:left; padding:5px">
+    <form action="/accounts/new" method="get">
+        <input class="btn btn-primary" style="width:100px; padding:5px;" type="submit" value="Register"/>
+    </form>
+</div>
+<br>
+<br>
+<br>
+<p>Prototype v 1.0</p>
+{% endblock %}

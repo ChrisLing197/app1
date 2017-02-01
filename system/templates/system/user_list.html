@@ -1,0 +1,5 @@
+<ul class="list-group">
+    {% for usr in users %}
+        <li class="list-group-item">[{{ usr.role }}] {{ usr.user.username }} - {{usr.user.first_name}} {{usr.user.last_name}}<a style="float: right" href="{% url 'system:user_detail' usr.id %}">Info</a></li>
+    {% endfor %}
+</ul>

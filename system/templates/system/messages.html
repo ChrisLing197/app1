@@ -1,0 +1,9 @@
+<h3>Messages</h3>
+<a href="{% url 'system:send_msg' %}">New Message</a>
+<ul class="list-group">
+{% for msg in msgs %}
+    <li class="list-group-item">{{ msg.sender }}: {{ msg.text }}</li>
+{% empty %}
+    <li class="list-group-item">You have no new messages</li>
+{% endfor %}
+</ul>

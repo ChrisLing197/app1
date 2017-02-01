@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <p style='float:left; padding:10px'>[Buyer] {{ user.user.username }}</p>
+    <a href='{% url 'system:logout' %}' class="btn btn-primary">Logout</a>
+    <div class="row">
+        <h2>Dashboard</h2>
+        <div class="col-md-4 col-sm-4">
+            {% include "system/buyer_info.html" %}
+        </div>
+        <div class="col-md-8 col-sm-8">
+            {% include "system/messages.html" %}
+        </div>
+        <div class="col-md-4 col-sm-4">
+            {% include "system/cart.html" %}
+        </div>
+    </div>
+    <div>
+        {% include "system/items_2.html" %}
+    </div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <p style='float:left; padding:10px'>[Admin] {{ user.user.username }}</p>
+    <a href='{% url 'system:logout' %}' class="btn btn-primary">Logout</a>
+    <div class="row">
+        <h2>Dashboard</h2>
+        <div class="col-md-4">
+            <h3>User List</h3>
+            <a href="{% url 'system:staff_register' %}">Create Account</a>
+            {% include "system/user_list.html" %}
+            &nbsp;
+            <h3>System Statistics</h3>
+            <ul class="list-group">
+                <li class="list-group-item">Total Number of Buyers: {{ stat.tot_pat }}</li>
+                <li class="list-group-item">Total Sellers: {{ stat.tot_doc }}</li>
+                <li class="list-group-item">Buyer to Seller ratio: {{ stat.stf_rat }}</li>
+            </ul>
+
+            {% include "system/messages.html" %}
+        </div>
+        <div class="col-md-8">
+            {% include "system/system_logs.html" %}
+        </div>
+    </div>
+{% endblock %}
